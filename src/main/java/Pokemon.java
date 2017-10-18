@@ -132,4 +132,26 @@ public class Pokemon {
         System.out.println(" ");
         return (opponent.hitPoints < 1);
     }
+
+    public static void main(final String[] args) {
+        Pokemon poki = new Pokemon();
+        Pokemon enemy = new Pokemon();
+
+        poki.hitPoints = 100;
+        poki.attackLevel = 10;
+        poki.defenseLevel = 10;
+        poki.name = "Poki";
+        enemy.hitPoints = 1;
+        enemy.attackLevel = 10;
+        enemy.defenseLevel = 10;
+        enemy.name = "Antipoki";
+        System.out.println(poki.name + " will win!!!");
+
+        boolean ended = false;
+        while (!ended) {
+            ended = poki.attack(enemy);
+        }
+        System.out.println(poki.name + " has won!!!");
+        return;
+    }
 }
